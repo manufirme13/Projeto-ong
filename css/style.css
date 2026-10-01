@@ -301,7 +301,7 @@ input:disabled {
   100% { opacity: 0; transform: translateY(1rem); visibility: hidden; }
 }
 
-/* ---------- MODAL (sem JavaScript, usa :target) ---------- */
+/* ---------- MODAL (aberto/fechado por JavaScript com a classe .aberto) ---------- */
 .botao-link {
   display: inline-block;
   text-decoration: none;
@@ -425,6 +425,21 @@ img {
   position: relative;
   max-width: 100%;
   margin-bottom: var(--espaco-3);
+}
+.pular-link {
+  position: absolute;
+  left: -999px;
+  padding: var(--espaco-2) var(--espaco-3);
+  background: var(--cor-destaque);
+  color: var(--cor-primaria);
+  z-index: 200;
+}
+.pular-link:focus {
+  left: var(--espaco-2);
+  top: var(--espaco-2);
+}
+#app:focus {
+  outline: none;
 }
 /* ---------- MEDIA QUERIES (sempre no final) ---------- */
 

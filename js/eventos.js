@@ -19,6 +19,12 @@ export function iniciarEventos() {
   const app = document.getElementById("app");
 
   document.addEventListener("click", (e) => {
+    // Link "Pular para o conteúdo": move o foco sem alterar o hash da URL
+    if (e.target.closest(".pular-link")) {
+      e.preventDefault();
+      app.focus();
+      return;
+    }
     const abrir = e.target.closest("[data-abrir-modal]");
     if (abrir) {
       abrirModal(abrir.dataset.abrirModal);
@@ -28,12 +34,21 @@ export function iniciarEventos() {
       fecharModal();
     }
     if (e.target.closest(".menu a")) {
-      document.getElementById("menu-toggle").checked = false;
+      const toggle = document.getElementById("menu-toggle");
+      toggle.checked = false;
+      toggle.setAttribute("aria-expanded", "false");
     }
     if (e.target.closest("[data-limpar-voluntarios]")) {
       limparVoluntarios();
       renderizarVoluntarios();
       renderizarGrafico();
+    }
+  });
+
+  // Mantém aria-expanded do menu hambúrguer sincronizado com o checkbox
+  document.addEventListener("change", (e) => {
+    if (e.target.id === "menu-toggle") {
+      e.target.setAttribute("aria-expanded", String(e.target.checked));
     }
   });
 

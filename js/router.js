@@ -1,8 +1,18 @@
 import { preencherTemplates } from "./templates.js";
+
 const ROTAS = {
   inicio: "html/inicio.html",
   projetos: "html/projetos.html",
   cadastro: "html/cadastro.html",
+};
+
+// Na primeira carga o foco não é movido, para o Tab começar no link "Pular"
+let primeiraCarga = true;
+
+const TITULOS = {
+  inicio: "Início",
+  projetos: "Projetos",
+  cadastro: "Seja voluntário",
 };
 
 export function iniciarRouter() {
@@ -40,17 +50,34 @@ async function renderizar() {
     // O que sobrou fora do <main> (modal, toast) vai para #overlays
     const extras = [...doc.body.children].filter((el) => el !== principal);
     overlays.replaceChildren(...extras);
-        preencherTemplates();
+    preencherTemplates();
   } catch (erro) {
     app.replaceChildren(criarMensagem("Erro ao carregar a página."));
     console.error(erro);
     return;
   }
 
-  // Fecha o menu mobile e ajusta a rolagem
-  document.getElementById("menu-toggle").checked = false;
+  // Fecha o menu mobile e informa o estado aos leitores de tela
+  const toggle = document.getElementById("menu-toggle");
+  toggle.checked = false;
+  toggle.setAttribute("aria-expanded", "false");
+
+  // Informa a página atual: título do documento e aria-current no menu
+  document.title = `${TITULOS[rota]} - Instituto Esperança`;
+  document.querySelectorAll(".menu a").forEach((a) => {
+    if (a.getAttribute("href") === `#/${rota}`) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+
+  // Rola até a âncora; sem âncora, volta ao topo e leva o foco ao conteúdo
   const destino = ancora && document.getElementById(ancora);
-  destino ? destino.scrollIntoView() : window.scrollTo(0, 0);
+  if (destino) {
+    destino.scrollIntoView();
+  } else {
+    window.scrollTo(0, 0);
+    if (!primeiraCarga) app.focus({ preventScroll: true });
+  }
+  primeiraCarga = false;
 }
 
 function criarMensagem(texto) {
