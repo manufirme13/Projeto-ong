@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instituto Esperança</title>
+    </head>
+    <body>
+        <header>
+            <h1>Instituto Esperança</h1>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icone" aria-label="Abrir ou fechar menu">☰</label>
+            <nav class="menu" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#/inicio">Início</a></li>
+                    <li class="tem-submenu">
+                        <a href="#/projetos">Projetos</a>
+                        <ul class="submenu">
+                            <li><a href="#/projetos/plantando">Plantando Esperança</a></li>
+                            <li><a href="#/projetos/inverno">Inverno Quentinho</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#/cadastro">Seja voluntário</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="app"></main>
+        <div id="overlays"></div>
+
+        <footer>
+            <p>&copy;2026 Instituto Esperança</p>
+        </footer>
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>
