@@ -7,11 +7,12 @@
         <title>Instituto Esperança</title>
     </head>
     <body>
+        <a href="#app" class="pular-link">Pular para o conteúdo</a>
         <header>
             <h1>Instituto Esperança</h1>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir ou fechar menu" aria-controls="menu-principal" aria-expanded="false">
             <label for="menu-toggle" class="menu-icone" aria-label="Abrir ou fechar menu">☰</label>
-            <nav class="menu" aria-label="Navegação principal">
+            <nav class="menu" id="menu-principal" aria-label="Navegação principal">
                 <ul>
                     <li><a href="#/inicio">Início</a></li>
                     <li class="tem-submenu">
@@ -26,7 +27,7 @@
             </nav>
         </header>
 
-        <main id="app"></main>
+        <main id="app" tabindex="-1"></main>
         <div id="overlays"></div>
 
         <footer>
