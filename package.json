@@ -1,0 +1,38 @@
+{
+  "name": "projeto-ong",
+  "version": "1.0.0",
+  "description": "projeto ONG (INSTITUTO ESPERANÇA)\r UM PROJETO ASSOCIADO AO CURSO DE ADS, ONDE EU PROJETEI UM WEBSITE COM HTML5, CSS E JAVASCRIPT PARA UMA ONG FICTÍCIA COM O OBJETIVO DE DESENVOLVER AS MINHAS HABILIDADES EM FRONT-END.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manufirme13/Projeto-ong.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/manufirme13/Projeto-ong/issues"
+  },
+  "homepage": "https://github.com/manufirme13/Projeto-ong#readme",
+  "devDependencies": {
+    "vite": "^8.3.2"
+  },
+  "dependencies": {
+    "detect-libc": "^2.1.2",
+    "fdir": "^6.5.0",
+    "lightningcss": "^1.33.0",
+    "lightningcss-win32-x64-msvc": "^1.33.0",
+    "nanoid": "^3.3.19",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.7",
+    "postcss": "^8.5.28",
+    "rolldown": "^1.2.12",
+    "source-map-js": "^1.2.2",
+    "tinyglobby": "^0.2.17"
+  }
+}
