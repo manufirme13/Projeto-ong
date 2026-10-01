@@ -1,0 +1,83 @@
+        <main>
+            <section>
+                <h2>Seja um voluntário</h2>
+                <form novalidate>
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+                        <label for="nome">Nome completo:</label>
+                        <input
+                            type="text"
+                            id="nome" 
+                            name="nome"
+                            required
+                        >
+                        <label for="email">E-mail:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            >
+                        <label for="cpf">CPF:</label>
+                        <input 
+                            type="text"
+                            id="cpf"
+                            name="cpf"
+                            maxlength="14"
+                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                            required
+                        >
+                        <label for="nascimento">Data de nascimento:</label>
+                        <input
+                            type="date"
+                            id="nascimento"
+                            name="nascimento"
+                            required
+                        >
+                    </fieldset>
+                    <fieldset>
+                        <legend>Endereço</legend>
+                        <label for="cep">CEP:</label>
+                        <input
+                            type="text"
+                            id="cep"
+                            name="cep"
+                            maxlength="9"
+                            pattern="\d{5}-\d{3}"
+                            required
+                        >
+                        <label for="endereco">Endereço:</label>
+                        <input
+                            type="text"
+                            id="endereco"
+                            name="endereco"
+                            required
+                        >
+                        <label for="cidade">Cidade:</label>
+                        <input
+                            type="text"
+                            id="cidade"
+                            name="cidade"
+                            required
+                        >
+                        <label for="estado">Estado:</label>
+                        <input
+                            type="text"
+                            id="estado"
+                            name="estado"
+                            maxlength="2"
+                            required
+                        >
+                    </fieldset>
+                    <button type="submit" class="botao">Enviar cadastro</button>
+                </form>
+            </section>
+            <section>
+                <h2>Voluntários cadastrados</h2>
+                <ul id="lista-voluntarios" class="lista-voluntarios"></ul>
+                <div class="grafico">
+                    <canvas id="grafico-estados" role="img" aria-label="Gráfico de voluntários por estado"></canvas>
+                </div>
+                <button type="button" class="botao" data-limpar-voluntarios>Limpar lista</button>
+            </section>
+        </main>

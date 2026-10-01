@@ -1,0 +1,41 @@
+
+        <main>
+            <section> 
+                <h2>Projetos do Instituto Esperança</h2>
+                    <div class="cards" id="lista-projetos"></div>
+            </section>
+            <section>
+                <h2>Faça uma doação</h2>
+                <p>
+                    Você pode contribuir com o Instituto Esperança
+                    através de uma doação financeira.
+                </p>
+                <h3>Dados bancários</h3>
+                <p>Banco: Banco Exemplo</p>
+                <p>Agência: 0000</p>
+                <p>Conta: 00000-0</p>
+                <p>PIX: contato@institutoesperanca.org</p>
+                <div class="alerta alerta--info" role="note">
+                    <strong>Informação:</strong> as doações são destinadas aos projetos ativos.
+                </div>
+                <div class="alerta alerta--sucesso" role="status">
+                    <strong>Sucesso:</strong> obrigado por apoiar o Instituto Esperança!
+                </div>
+                <div class="alerta alerta--aviso" role="alert">
+                    <strong>Atenção:</strong> confira os dados bancários antes de transferir.
+                </div>
+                <div class="alerta alerta--erro" role="alert">
+                    <strong>Erro:</strong> não foi possível confirmar sua doação. Tente novamente.
+                </div>
+
+                <button type="button" class="botao" data-abrir-modal="modal-doacao">Como doar</button>
+            </section>
+        </main>
+       <div id="modal-doacao" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+            <div class="modal__caixa">
+                <button type="button" class="modal__fechar" data-fechar-modal aria-label="Fechar">&times;</button>
+                <h2 id="modal-titulo">Como doar</h2>
+                <p>Faça um PIX para <strong>contato@institutoesperanca.org</strong> ou transferência para a conta informada. Toda doação apoia nossos projetos.</p>
+                <button type="button" class="botao" data-fechar-modal>Entendi</button>
+            </div>
+        </div>
